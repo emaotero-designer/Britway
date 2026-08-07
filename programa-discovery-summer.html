@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'London Tube'; src: url('fonts/TUBE.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #D70100; text-decoration: none; }
+  a:hover { color: #000000; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
+
+  <div style="background: #D70100; color: #FFFFFF;">
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.22);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+        </button>
+        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
+          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
+          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        </a>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top: 1px solid rgba(255,255,255,0.22); background: #D70100;">
+          <nav style="max-width: 1180px; margin: 0 auto; padding: 22px 32px 30px; display: grid; gap: 16px; justify-items: start;">
+            <a href="index.html#programas" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Programas</a>
+          <a href="como-se-vive-el-viaje.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Cómo se vive el viaje</a>
+          <a href="antes-de-viajar.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Antes de viajar</a>
+          <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 11px 20px; border-radius: 999px; font-size: 14px; font-weight: 700;">Brochure</a>
+          </nav>
+        </div>
+      </sc-if>
+    </header>
+    <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px;">
+      <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.78);">Julio · Winchester College y Benenden School</div>
+      <h1 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 62px; line-height: 1; margin: 16px 0 0; text-transform: uppercase; max-width: 18ch;">Discovery Summer</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 60ch; margin: 20px 0 0;">Winchester College es uno de los principales colegios independientes de Gran Bretaña, con reputación de excelencia académica. El campus, tranquilo y espacioso, ofrece un entorno seguro: el College Hall del siglo XIV revestido de roble, un teatro, piscina cubierta, pabellón deportivo, gimnasio, campos de críquet, pistas de tenis y amplios terrenos.</p>
+    </section>
+  </div>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
+    <div style="background: #D70100; border-radius: 8px; height: 320px; display: flex; align-items: flex-end; padding: 24px;">
+      <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — campus Winchester</span>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 44px 56px;">
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Programa académico</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Niveles desde elemental hasta avanzado. Las clases incluyen Habilidades de Inglés, talleres de inglés y presentaciones de fin de semana, con visitas de estudio junto al profesor. Clases reducidas y grupos internacionales.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Talleres y especialidades</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Cada semana el estudiante elige proyectos colaborativos y especialidades: Inteligencia Artificial, Negocios, Drama, Economía, Ingeniería, Realización Cinematográfica, Relaciones Internacionales, Debate, Fotografía Digital, Modelo ONU, STEM, Cultura Británica y más. Las clases son prácticas: se aprende haciendo.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Programa de actividades</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Tardes con deportes, arte y diseño, danza y movimiento, juegos británicos. Noches con retos de liderazgo, veladas de misterio, concursos de talentos, juegos relajados en la residencia y discotecas. Eventos especiales: ceilidh (baile tradicional), tiro con arco y discotecas semanales en la Universidad de Winchester.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Excursiones</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Excursiones semanales: Thorpe Park, Corfe Castle, Londres, Oxford, Portsmouth. Desde Benenden: Londres, Thorpe Park, Castillo de Leeds y la Catedral de Canterbury. Además, tiempo libre supervisado para explorar la ciudad.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Alojamiento y supervisión</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Residencias a poca distancia a pie del campus principal, con dormitorios compartidos y baños compartidos. Padres residentes de la casa cuidan al estudiante durante toda su estancia, con supervisión estrecha en todo momento, comidas diarias con variedad saludable y acceso restringido a teléfonos móviles.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Amplia variedad de nacionalidades</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Discovery Summer recibe estudiantes de decenas de nacionalidades, y una parte de los alumnos en Winchester son británicos: los anfitriones estudiantiles ingleses. Una oportunidad para hacer nuevos amigos.</p>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
+    <div style="border-top: 1px solid rgba(0,0,0,0.14); padding-top: 22px; font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">Sede alternativa: Benenden School, Kent. Colegio tradicional rodeado de parque, a poca distancia de Londres y del aeropuerto de Gatwick, a una hora de la costa.</div>
+  </section>
+
+  <section style="margin-top: 80px; background: #D70100; color: #FFFFFF;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 64px 32px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 38px; line-height: 1.1; margin: 0; text-transform: uppercase; max-width: 20ch;">¿Querés el detalle completo?</h2>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 800;">Descargar el brochure</a>
+        <a href="index.html#programas" style="border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 700;">Ver los otros programas</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: rgba(255,255,255,0.6);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
+      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' }
+    };
+  }
+}
+</script>
+</body>
+</html>

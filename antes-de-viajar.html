@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'London Tube'; src: url('fonts/TUBE.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #D70100; text-decoration: none; }
+  a:hover { color: #000000; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
+
+  <div style="background: #D70100; color: #FFFFFF;">
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.22);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+        </button>
+        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
+          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
+          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        </a>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top: 1px solid rgba(255,255,255,0.22); background: #D70100;">
+          <nav style="max-width: 1180px; margin: 0 auto; padding: 22px 32px 30px; display: grid; gap: 16px; justify-items: start;">
+            <a href="index.html#programas" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Programas</a>
+          <a href="como-se-vive-el-viaje.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Cómo se vive el viaje</a>
+          <a href="antes-de-viajar.html" style="font-size: 14px; font-weight: 700; color: #FFFFFF; border-bottom: 2px solid #FFFFFF;">Antes de viajar</a>
+          <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 11px 20px; border-radius: 999px; font-size: 14px; font-weight: 700;">Brochure</a>
+          </nav>
+        </div>
+      </sc-if>
+    </header>
+    <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px;">
+      <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.78);">Preparación</div>
+      <h1 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 64px; line-height: 1; margin: 16px 0 0; text-transform: uppercase; max-width: 14ch;">Antes de viajar</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 58ch; margin: 20px 0 0;">Britway acompaña la preparación de principio a fin. Confirmamos con cada familia los detalles según el programa y las fechas elegidas.</p>
+    </section>
+  </div>
+
+  <section id="requisitos" style="max-width: 1180px; margin: 0 auto; padding: 80px 32px 0;">
+    <div style="display: grid; gap: 40px; justify-items: center;">
+      <div style="max-width: 60ch; text-align: center;">
+        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Requisitos</div>
+        <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 42px; line-height: 1.05; margin: 16px 0 12px;">Qué necesita el estudiante</h2>
+        <p style="font-size: 16px; line-height: 1.62; color: rgba(0,0,0,0.7); margin: 0;">Abrí cada carpeta para ver el detalle.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; width: 100%; max-width: 900px;">
+        <button type="button" onClick="{{ openReq0 }}" style="{{ folderBtn }}">
+          <svg viewBox="0 0 120 96" width="100%" height="auto" aria-hidden="true" style="display: block;"><path d="M4 18a6 6 0 0 1 6-6h34l10 10h56a6 6 0 0 1 6 6v6H4z" fill="#8FB6DE" /><path d="M4 26h112v58a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#AFCDEB" /></svg>
+          <span style="margin-top: 14px; display: inline-block; font-size: 16px; font-weight: 800; color: #000000;">Nivel de inglés</span>
+        </button>
+        <button type="button" onClick="{{ openReq1 }}" style="{{ folderBtn }}">
+          <svg viewBox="0 0 120 96" width="100%" height="auto" aria-hidden="true" style="display: block;"><path d="M4 18a6 6 0 0 1 6-6h34l10 10h56a6 6 0 0 1 6 6v6H4z" fill="#8FB6DE" /><path d="M4 26h112v58a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#AFCDEB" /></svg>
+          <span style="margin-top: 14px; display: inline-block; font-size: 16px; font-weight: 800; color: #000000;">Documentación</span>
+        </button>
+        <button type="button" onClick="{{ openReq2 }}" style="{{ folderBtn }}">
+          <svg viewBox="0 0 120 96" width="100%" height="auto" aria-hidden="true" style="display: block;"><path d="M4 18a6 6 0 0 1 6-6h34l10 10h56a6 6 0 0 1 6 6v6H4z" fill="#8FB6DE" /><path d="M4 26h112v58a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#AFCDEB" /></svg>
+          <span style="margin-top: 14px; display: inline-block; font-size: 16px; font-weight: 800; color: #000000;">Edades y grupos</span>
+        </button>
+        <button type="button" onClick="{{ openReq3 }}" style="{{ folderBtn }}">
+          <svg viewBox="0 0 120 96" width="100%" height="auto" aria-hidden="true" style="display: block;"><path d="M4 18a6 6 0 0 1 6-6h34l10 10h56a6 6 0 0 1 6 6v6H4z" fill="#8FB6DE" /><path d="M4 26h112v58a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#AFCDEB" /></svg>
+          <span style="margin-top: 14px; display: inline-block; font-size: 16px; font-weight: 800; color: #000000;">Salud y bienestar</span>
+        </button>
+      </div>
+      <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ closeModal }}" style="position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; padding: 32px;">
+          <div style="background: #000000; color: #FFFFFF; border-radius: 22px; padding: 48px 52px 52px; max-width: 620px; width: 100%; text-align: left; box-shadow: 0 30px 70px rgba(0,0,0,0.35);">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+              <span style="font-size: 24px; font-weight: 800; letter-spacing: -0.01em;">{{ modalTitle }}</span>
+              <button type="button" onClick="{{ closeModal }}" style="{{ closeBtn }}">✕</button>
+            </div>
+            <p style="color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.65; margin: 22px 0 0;">{{ modalText }}</p>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="faq" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 0;">
+    <div style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 64px;">
+      <div>
+        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Preguntas frecuentes</div>
+        <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 42px; line-height: 1.05; margin: 16px 0 0;">Antes de decidir</h2>
+      </div>
+      <div style="border-top: 1px solid rgba(0,0,0,0.16);">
+        <button type="button" onClick="{{ faq0 }}" style="{{ faqRow }}">
+          <span style="font-size: 18px; font-weight: 700;">¿Qué incluye la experiencia en casa de familia?</span>
+          <span style="font-size: 22px; color: #D70100;">{{ faqIcon0 }}</span>
+        </button>
+        <sc-if value="{{ faqOpen0 }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0; padding: 0 4px 24px;">Es una inmersión total: convivencia auténtica con una familia anfitriona seleccionada cuidadosamente, incorporando la cultura desde adentro. Las casas están a pocos minutos caminando de la escuela e incluyen desayuno y cena.</p>
+        </sc-if>
+        <button type="button" onClick="{{ faq1 }}" style="{{ faqRow }}">
+          <span style="font-size: 18px; font-weight: 700;">¿Quién acompaña al estudiante durante el viaje?</span>
+          <span style="font-size: 22px; color: #D70100;">{{ faqIcon1 }}</span>
+        </button>
+        <sc-if value="{{ faqOpen1 }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0; padding: 0 4px 24px;">Britway está presente en cada etapa, asegurándose de que cada alumno saque lo mejor de su experiencia. En las residencias, los padres residentes de la casa cuidan al estudiante durante toda su estancia, y todas las excursiones están supervisadas por el personal.</p>
+        </sc-if>
+        <button type="button" onClick="{{ faq2 }}" style="{{ faqRow }}">
+          <span style="font-size: 18px; font-weight: 700;">¿Qué pasa con el uso del celular?</span>
+          <span style="font-size: 22px; color: #D70100;">{{ faqIcon2 }}</span>
+        </button>
+        <sc-if value="{{ faqOpen2 }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0; padding: 0 4px 24px;">Los campamentos tienen acceso restringido a teléfonos móviles. En Exsportise se anima activamente a los estudiantes a «Conectar de Verdad» cuando socializan con sus compañeros y amigos, sin necesidad de sus teléfonos.</p>
+        </sc-if>
+        <button type="button" onClick="{{ faq3 }}" style="{{ faqRow }}">
+          <span style="font-size: 18px; font-weight: 700;">¿El estudiante recibe una certificación?</span>
+          <span style="font-size: 22px; color: #D70100;">{{ faqIcon3 }}</span>
+        </button>
+        <sc-if value="{{ faqOpen3 }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0; padding: 0 4px 24px;">En Exsportise los estudiantes salen con un certificado de nivel de inglés y un informe académico de su profesor. En BEET, además del inglés general por niveles, hay preparación para IELTS y Cambridge English (FCE, CAE, CPE).</p>
+        </sc-if>
+        <button type="button" onClick="{{ faq4 }}" style="{{ faqRow }}">
+          <span style="font-size: 18px; font-weight: 700;">¿Puede viajar un grupo de mi institución completo?</span>
+          <span style="font-size: 22px; color: #D70100;">{{ faqIcon4 }}</span>
+        </button>
+        <sc-if value="{{ faqOpen4 }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0; padding: 0 4px 24px;">Sí. Britway ofrece programas a medida según el perfil de cada grupo, y BEET dicta cursos a medida para grupos cerrados. Escribinos y armamos la propuesta para tu institución.</p>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top: 96px; background: #D70100; color: #FFFFFF;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 64px 32px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 38px; line-height: 1.1; margin: 0; text-transform: uppercase; max-width: 22ch;">Llevate el brochure completo</h2>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 800;">Descargar el brochure</a>
+        <a href="como-se-vive-el-viaje.html" style="border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 700;">Cómo se vive el viaje</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: rgba(255,255,255,0.6);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
+      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const REQUISITOS = [
+  { title: 'Nivel de inglés', text: 'No se requiere un nivel previo determinado. Los programas atienden todos los niveles del MCER y el estudiante es asignado a su clase tras una prueba de nivel.' },
+  { title: 'Documentación', text: 'Pasaporte vigente y la documentación de ingreso al Reino Unido correspondiente al programa. Britway indica el detalle y los plazos a cada familia.' },
+  { title: 'Edades y grupos', text: 'A confirmar según el programa: cada sede define el rango de edad y el formato, individual o grupo institucional cerrado.' },
+  { title: 'Salud y bienestar', text: 'Ficha médica y necesidades alimentarias declaradas antes de viajar. Los campamentos cuentan con oficiales médicos, padres de casa y gestor de bienestar.' }
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, modal: null, faq: 0 };
+
+  faqToggle(i) { return () => this.setState(s => ({ faq: s.faq === i ? null : i })); }
+
+  renderVals() {
+    const m = this.state.modal, faq = this.state.faq;
+    const cur = m === null ? null : REQUISITOS[m];
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' },
+      folderBtn: {
+        background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+        fontFamily: 'Montserrat, sans-serif', color: '#000000',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'
+      },
+      openReq0: () => this.setState({ modal: 0 }), openReq1: () => this.setState({ modal: 1 }),
+      openReq2: () => this.setState({ modal: 2 }), openReq3: () => this.setState({ modal: 3 }),
+      closeModal: () => this.setState({ modal: null }),
+      modalOpen: m !== null,
+      modalTitle: cur ? cur.title : '',
+      modalText: cur ? cur.text : '',
+      closeBtn: {
+        background: 'none', border: '1px solid rgba(255,255,255,0.35)', color: '#FFFFFF',
+        width: '36px', height: '36px', borderRadius: '999px', cursor: 'pointer',
+        fontFamily: 'Montserrat, sans-serif', fontSize: '14px', flexShrink: 0
+      },
+      faqRow: {
+        width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        gap: '24px', textAlign: 'left', background: 'none', border: 'none',
+        borderBottom: '1px solid rgba(0,0,0,0.16)', padding: '24px 4px', cursor: 'pointer',
+        fontFamily: 'Montserrat, sans-serif', color: '#000000'
+      },
+      faq0: this.faqToggle(0), faq1: this.faqToggle(1), faq2: this.faqToggle(2),
+      faq3: this.faqToggle(3), faq4: this.faqToggle(4),
+      faqOpen0: faq === 0, faqOpen1: faq === 1, faqOpen2: faq === 2,
+      faqOpen3: faq === 3, faqOpen4: faq === 4,
+      faqIcon0: faq === 0 ? '−' : '+', faqIcon1: faq === 1 ? '−' : '+',
+      faqIcon2: faq === 2 ? '−' : '+', faqIcon3: faq === 3 ? '−' : '+',
+      faqIcon4: faq === 4 ? '−' : '+'
+    };
+  }
+}
+</script>
+</body>
+</html>

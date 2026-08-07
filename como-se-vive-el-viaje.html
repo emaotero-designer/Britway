@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'London Tube'; src: url('fonts/TUBE.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #D70100; text-decoration: none; }
+  a:hover { color: #000000; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
+
+  <div style="background: #D70100; color: #FFFFFF;">
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.22);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+        </button>
+        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
+          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
+          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        </a>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top: 1px solid rgba(255,255,255,0.22); background: #D70100;">
+          <nav style="max-width: 1180px; margin: 0 auto; padding: 22px 32px 30px; display: grid; gap: 16px; justify-items: start;">
+            <a href="index.html#programas" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Programas</a>
+          <a href="como-se-vive-el-viaje.html" style="font-size: 14px; font-weight: 700; color: #FFFFFF; border-bottom: 2px solid #FFFFFF;">Cómo se vive el viaje</a>
+          <a href="antes-de-viajar.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Antes de viajar</a>
+          <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 11px 20px; border-radius: 999px; font-size: 14px; font-weight: 700;">Brochure</a>
+          </nav>
+        </div>
+      </sc-if>
+    </header>
+    <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px;">
+      <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.78);">La experiencia</div>
+      <h1 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 64px; line-height: 1; margin: 16px 0 0; text-transform: uppercase; max-width: 16ch;">Cómo se vive el viaje</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 58ch; margin: 20px 0 0;">La semana por dentro, el alojamiento en casa de familia, las fotos de los grupos y lo que cuentan las familias que ya viajaron.</p>
+    </section>
+  </div>
+
+  <nav style="position: sticky; top: 0; z-index: 30; background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.12);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; gap: 28px; flex-wrap: wrap;">
+      <a href="#semana" style="font-size: 13px; font-weight: 700; color: #000000;">Semana tipo</a>
+      <a href="#casa" style="font-size: 13px; font-weight: 700; color: #000000;">Casa de familia</a>
+      <a href="#galeria" style="font-size: 13px; font-weight: 700; color: #000000;">Galería</a>
+      <a href="#testimonios" style="font-size: 13px; font-weight: 700; color: #000000;">Testimonios</a>
+    </div>
+  </nav>
+
+  <section id="semana" style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 0;">
+    <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Itinerario</div>
+    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 16px 0 10px;">Cómo se vive una semana</h2>
+    <p style="font-size: 17px; line-height: 1.6; color: rgba(0,0,0,0.72); max-width: 62ch; margin: 0;">El ritmo cambia según el programa elegido, pero la estructura de la semana se repite: clases, actividades, noches con el grupo y salidas los fines de semana.</p>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(0,0,0,0.16); margin-top: 40px; border: 1px solid rgba(0,0,0,0.16); border-radius: 8px; overflow: hidden;">
+      <div style="background: #FFFFFF; padding: 26px 22px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; margin-bottom: 12px;">Mañanas</div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: rgba(0,0,0,0.78);">Clases de inglés por nivel, con lecciones y descansos. Talleres, habilidades de presentación y proyectos colaborativos.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 26px 22px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; margin-bottom: 12px;">Tardes</div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: rgba(0,0,0,0.78);">Deportes, arte y diseño, danza y movimiento, juegos británicos. En Exsportise, entrenamiento con entrenadores profesionales.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 26px 22px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; margin-bottom: 12px;">Noches</div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: rgba(0,0,0,0.78);">Retos de liderazgo, veladas de misterio, concursos de talentos, quiz nights, karaoke, juegos en la residencia y discotecas.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 26px 22px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; margin-bottom: 12px;">Sábados</div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: rgba(0,0,0,0.78);">Salidas recreativas: parques temáticos, ciudades cercanas como Brighton, Oxford, Cambridge o Portsmouth, y estadios.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 26px 22px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; margin-bottom: 12px;">Domingos</div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: rgba(0,0,0,0.78);">Excursiones culturales: ruta a pie por Londres, atracciones naturales y lugares emblemáticos, con tiempo libre supervisado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="casa" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; border: 1px solid rgba(0,0,0,0.14); border-radius: 8px; overflow: hidden;">
+      <div style="padding: 40px;">
+        <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; font-weight: 700;">Experiencia personalizada</div>
+        <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 34px; margin: 10px 0 12px;">Casa de familia</h2>
+        <p style="font-size: 16px; line-height: 1.62; color: rgba(0,0,0,0.72); margin: 0;">Para jóvenes y adultos que buscan vivir una inmersión total. Convivencia auténtica con una familia anfitriona, incorporando la cultura desde adentro y viviendo una experiencia genuina de la vida cotidiana británica.</p>
+      </div>
+      <div style="background: #D70100; height: 100%; min-height: 260px; display: flex; align-items: flex-end; padding: 20px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — familia anfitriona</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 0;">Galería</h2>
+      <span style="font-size: 13px; color: rgba(0,0,0,0.55);">Espacios reservados para fotos reales de los viajes</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 14px; margin-top: 32px;">
+      <div style="grid-column: span 2; grid-row: span 2; background: #D70100; border-radius: 6px; display: flex; align-items: flex-end; padding: 20px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — el grupo completo</span>
+      </div>
+      <div style="background: #D70100; border-radius: 6px; display: flex; align-items: flex-end; padding: 16px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — familia anfitriona</span>
+      </div>
+      <div style="background: #000000; border-radius: 6px; display: flex; align-items: flex-end; padding: 16px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.75);">Foto — Londres</span>
+      </div>
+      <div style="background: #D70100; border-radius: 6px; display: flex; align-items: flex-end; padding: 16px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — deporte</span>
+      </div>
+      <div style="background: #000000; border-radius: 6px; display: flex; align-items: flex-end; padding: 16px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.75);">Foto — residencia</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 22px;">
+      <a href="galeria.html" style="border: 1px solid rgba(0,0,0,0.28); color: #000000; padding: 9px 20px; border-radius: 999px; font-size: 13px; font-weight: 700;">Ver más</a>
+    </div>
+  </section>
+
+  <section id="testimonios" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
+    <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Testimonios</div>
+    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 16px 0 10px;">Lo que cuentan las familias</h2>
+    <p style="font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Contenido pendiente: necesitamos las citas reales de estudiantes y familias.</p>
+    <div style="border: 1px dashed rgba(0,0,0,0.3); border-radius: 8px; padding: 48px; margin-top: 32px; background: #FAFAFA;">
+      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; font-weight: 700;">{{ tLabel }}</div>
+      <div style="font-weight: 700; letter-spacing: -0.02em; font-size: 30px; line-height: 1.3; color: rgba(0,0,0,0.4); margin: 18px 0 26px; max-width: 34ch; min-height: 120px;">{{ tQuote }}</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #D70100;"></div>
+          <div style="font-size: 13px; color: rgba(0,0,0,0.55);">{{ tMeta }}</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" onClick="{{ tPrev }}" style="{{ navBtn }}">←</button>
+          <span style="font-size: 13px; font-weight: 700; color: rgba(0,0,0,0.6); min-width: 44px; text-align: center;">{{ tCount }}</span>
+          <button type="button" onClick="{{ tNext }}" style="{{ navBtn }}">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top: 96px; background: #D70100; color: #FFFFFF;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 64px 32px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 38px; line-height: 1.1; margin: 0; text-transform: uppercase; max-width: 22ch;">Lo que hay que preparar antes de salir</h2>
+      <a href="antes-de-viajar.html" style="background: #FFFFFF; color: #D70100; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 800;">Ir a Antes de viajar</a>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: rgba(255,255,255,0.6);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
+      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TESTIMONIALS = [
+  { label: 'Testimonio 1', quote: 'Cita de un estudiante sobre su experiencia académica.', meta: 'Nombre · Programa · Año' },
+  { label: 'Testimonio 2', quote: 'Cita de una madre o padre sobre el acompañamiento y la seguridad.', meta: 'Nombre · Familia · Año' },
+  { label: 'Testimonio 3', quote: 'Cita de una institución o docente que viajó con su grupo.', meta: 'Nombre · Institución · Año' }
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, t: 0 };
+  renderVals() {
+    const cur = TESTIMONIALS[this.state.t];
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' },
+      tLabel: cur.label, tQuote: cur.quote, tMeta: cur.meta,
+      tCount: (this.state.t + 1) + ' / ' + TESTIMONIALS.length,
+      navBtn: {
+        width: '40px', height: '40px', borderRadius: '999px', cursor: 'pointer',
+        border: '1px solid rgba(0,0,0,0.28)', background: '#FFFFFF',
+        color: '#000000', fontSize: '16px', fontFamily: 'Montserrat, sans-serif'
+      },
+      tPrev: () => this.setState(s => ({ t: (s.t - 1 + TESTIMONIALS.length) % TESTIMONIALS.length })),
+      tNext: () => this.setState(s => ({ t: (s.t + 1) % TESTIMONIALS.length }))
+    };
+  }
+}
+</script>
+</body>
+</html>

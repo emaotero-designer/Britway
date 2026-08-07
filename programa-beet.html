@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'London Tube'; src: url('fonts/TUBE.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #D70100; text-decoration: none; }
+  a:hover { color: #000000; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
+
+  <div style="background: #D70100; color: #FFFFFF;">
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.22);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+        </button>
+        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
+          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
+          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        </a>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top: 1px solid rgba(255,255,255,0.22); background: #D70100;">
+          <nav style="max-width: 1180px; margin: 0 auto; padding: 22px 32px 30px; display: grid; gap: 16px; justify-items: start;">
+            <a href="index.html#programas" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Programas</a>
+          <a href="como-se-vive-el-viaje.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Cómo se vive el viaje</a>
+          <a href="antes-de-viajar.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Antes de viajar</a>
+          <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 11px 20px; border-radius: 999px; font-size: 14px; font-weight: 700;">Brochure</a>
+          </nav>
+        </div>
+      </sc-if>
+    </header>
+    <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px;">
+      <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.78);">Enero · Bournemouth, Inglaterra</div>
+      <h1 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 62px; line-height: 1; margin: 16px 0 0; text-transform: uppercase; max-width: 18ch;">BEET Language Centre</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 60ch; margin: 20px 0 0;">Escuela familiar e independiente, reconocida por el British Council como la escuela de idiomas independiente número uno de Bournemouth. BEET combina excelencia académica con un ambiente cálido y personalizado, donde cada estudiante es tratado como parte de la familia.</p>
+    </section>
+  </div>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
+    <div style="background: #D70100; border-radius: 8px; height: 320px; display: flex; align-items: flex-end; padding: 24px;">
+      <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — la escuela</span>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 64px 32px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 44px 56px;">
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">La escuela</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Edificio del siglo XIX ubicado en una zona residencial tranquila de Bournemouth, a pasos de comercios, restaurantes y la vida de la ciudad. Todas las aulas cuentan con pizarras interactivas y Wi-Fi gratuito, con clases reducidas.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Cursos</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Inglés general por niveles (A a C), preparación para IELTS y Cambridge English (FCE, CAE, CPE) y cursos a medida para grupos cerrados. Materiales y libros incluidos.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Programa social</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Karaoke, veladas de música, noches de juegos, quiz nights, talleres de arte, danza irlandesa, lecturas y más. La vida social en BEET es parte central de la experiencia, diseñada para que los estudiantes practiquen inglés fuera del aula de forma natural y divertida.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Excursiones los sábados</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Salidas guiadas por docentes a los destinos más emblemáticos de Inglaterra: Londres, Oxford, Cambridge, Bath, Salisbury, Stonehenge, Isla de Wight y más.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Alojamiento</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Todas las opciones están a pocos minutos caminando de la escuela. Las familias anfitrionas son seleccionadas cuidadosamente e incluyen desayuno y cena.</p>
+    </div>
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; margin: 0 0 12px;">Bournemouth</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.72); margin: 0;">Ciudad costera galardonada, con playas de arena, excelente transporte, ambiente seguro y una vibrante vida universitaria internacional. A pocas horas de Londres en tren y a minutos del aeropuerto internacional.</p>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
+    <div style="border-top: 1px solid rgba(0,0,0,0.14); padding-top: 22px; font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">Acreditaciones y membresías: British Council · English UK · Quality English · IALC · TEN · El Gazette Approved Centre of Excellence</div>
+  </section>
+
+  <section style="margin-top: 80px; background: #D70100; color: #FFFFFF;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 64px 32px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 38px; line-height: 1.1; margin: 0; text-transform: uppercase; max-width: 20ch;">¿Querés el detalle completo?</h2>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="brochure.html" style="background: #FFFFFF; color: #D70100; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 800;">Descargar el brochure</a>
+        <a href="index.html#programas" style="border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 700;">Ver los otros programas</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: rgba(255,255,255,0.6);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
+      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'London Tube'; src: url('fonts/TUBE.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #D70100; text-decoration: none; }
+  a:hover { color: #000000; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
+
+  <div style="background: #D70100; color: #FFFFFF;">
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.22);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+          <span style="{{ burgerLine }}"></span>
+        </button>
+        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
+          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
+          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        </a>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top: 1px solid rgba(255,255,255,0.22); background: #D70100;">
+          <nav style="max-width: 1180px; margin: 0 auto; padding: 22px 32px 30px; display: grid; gap: 16px; justify-items: start;">
+            <a href="index.html#programas" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Programas</a>
+          <a href="como-se-vive-el-viaje.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Cómo se vive el viaje</a>
+          <a href="antes-de-viajar.html" style="font-size: 17px; font-weight: 600; color: #FFFFFF;">Antes de viajar</a>
+          <a href="index.html" style="font-size: 14px; font-weight: 700; color: #FFFFFF;">← Inicio</a>
+          </nav>
+        </div>
+      </sc-if>
+    </header>
+    <section style="max-width: 1180px; margin: 0 auto; padding: 72px 32px;">
+      <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75);">Material descargable</div>
+      <h1 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.005em; font-size: 64px; line-height: 0.98; margin: 18px 0 0; text-transform: uppercase; max-width: 16ch;">Brochure Britway 2026</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 56ch; margin: 20px 0 0;">Las tres propuestas y los anexos de cada programa: características, objetivos, actividades y alojamiento. Dejanos tus datos y te lo enviamos por mail.</p>
+    </section>
+  </div>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+    <div>
+      <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 30px; line-height: 1.1; margin: 0 0 24px;">Qué vas a encontrar adentro</h2>
+      <div style="display: grid; gap: 1px; background: rgba(0,0,0,0.14); border: 1px solid rgba(0,0,0,0.14); border-radius: 8px; overflow: hidden;">
+        <div style="background: #FFFFFF; padding: 22px 24px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100;">Enero</div>
+          <div style="font-weight: 700; font-size: 19px; margin: 6px 0 4px;">BEET Language Centre, Bournemouth</div>
+          <div style="font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7);">Cursos, programa social, excursiones de sábado y alojamiento en casa de familia.</div>
+        </div>
+        <div style="background: #FFFFFF; padding: 22px 24px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100;">Julio</div>
+          <div style="font-weight: 700; font-size: 19px; margin: 6px 0 4px;">Discovery Summer, Winchester y Benenden</div>
+          <div style="font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7);">Programa académico, talleres y especialidades, actividades y supervisión en residencia.</div>
+        </div>
+        <div style="background: #FFFFFF; padding: 22px 24px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100;">Julio</div>
+          <div style="font-weight: 700; font-size: 19px; margin: 6px 0 4px;">Exsportise, inglés y deporte</div>
+          <div style="font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7);">Los cursos deportivos, las clases de inglés, la vida en el campus y las salidas del fin de semana.</div>
+        </div>
+      </div>
+      <div style="background: #D70100; border-radius: 8px; height: 260px; margin-top: 24px; display: flex; align-items: flex-end; padding: 20px;">
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — tapa del brochure</span>
+      </div>
+    </div>
+
+    <div style="border: 1px solid rgba(0,0,0,0.16); border-radius: 8px; padding: 36px;">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 26px; margin: 0 0 6px;">Descargar el brochure</h2>
+          <p style="font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7); margin: 0 0 24px;">Te lo mandamos al mail junto con las fechas de la próxima charla informativa.</p>
+          <div style="display: grid; gap: 16px;">
+            <label style="display: grid; gap: 7px;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.6);">Nombre y apellido</span>
+              <input type="text" placeholder="Nombre del estudiante o del responsable" style="{{ input }}" />
+            </label>
+            <label style="display: grid; gap: 7px;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.6);">Email</span>
+              <input type="email" placeholder="nombre@mail.com" style="{{ input }}" />
+            </label>
+            <label style="display: grid; gap: 7px;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.6);">Teléfono</span>
+              <input type="tel" placeholder="+54 9 ..." style="{{ input }}" />
+            </label>
+            <label style="display: grid; gap: 7px;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.6);">Programa de interés</span>
+              <select style="{{ input }}">
+                <option>Todavía no lo definí</option>
+                <option>BEET Language Centre — enero</option>
+                <option>Discovery Summer — julio</option>
+                <option>Exsportise — julio</option>
+                <option>Grupo institucional</option>
+              </select>
+            </label>
+          </div>
+          <button type="button" onClick="{{ send }}" style="{{ cta }}">Descargar el brochure</button>
+          <p style="font-size: 12px; line-height: 1.5; color: rgba(0,0,0,0.5); margin: 14px 0 0;">Usamos tus datos solo para enviarte información de los programas.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; gap: 14px; padding: 20px 0;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100;">Listo</div>
+          <div style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 28px; line-height: 1.15;">Te enviamos el brochure por mail.</div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(0,0,0,0.7); margin: 0;">Si no lo ves en unos minutos, revisá la carpeta de spam. Cualquier duda, respondé ese mismo mail y te contestamos.</p>
+          <a href="index.html" style="font-size: 15px; font-weight: 700;">← Volver al inicio</a>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: rgba(255,255,255,0.6);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
+      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { menuOpen: false, sent: false };
+  renderVals() {
+    const input = {
+      fontFamily: 'Montserrat, sans-serif', fontSize: '15px', color: '#000000',
+      padding: '13px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.24)',
+      background: '#FFFFFF', width: '100%'
+    };
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' },
+      input,
+      sent: this.state.sent, notSent: !this.state.sent,
+      send: () => this.setState({ sent: true }),
+      cta: {
+        marginTop: '24px', width: '100%', background: '#D70100', color: '#FFFFFF',
+        border: 'none', borderRadius: '999px', padding: '16px 28px', cursor: 'pointer',
+        fontFamily: 'Montserrat, sans-serif', fontSize: '16px', fontWeight: 800
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
