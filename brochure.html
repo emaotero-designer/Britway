@@ -17,6 +17,31 @@
   a { color: #D70100; text-decoration: none; }
   a:hover { color: #000000; }
   * { box-sizing: border-box; }
+  img, svg { max-width: 100%; }
+  @media (max-width: 900px) {
+    [style*="max-width: 1180px"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    [style*="grid-template-columns: repeat(3, 1fr)"],
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+    [style*="grid-template-columns: 22px 1fr"] { grid-template-columns: 22px 1fr !important; }
+    [style*="grid-template-rows: 240px 150px"] { grid-template-rows: 180px 120px !important; }
+    h1 { font-size: 40px !important; }
+    h2 { font-size: 28px !important; }
+    h3 { font-size: 23px !important; }
+    [style*="font-size: 38px"] { font-size: 26px !important; }
+    [style*="padding: 84px 32px 88px"] { padding: 44px 20px 52px !important; }
+    [style*="padding: 40px"] { padding: 24px !important; }
+    [style*="padding: 44px"] { padding: 24px !important; }
+    [style*="padding: 48px"] { padding: 26px !important; }
+    [style*="padding: 36px"] { padding: 24px !important; }
+    [style*="padding: 72px 32px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+  }
+  @media (max-width: 620px) {
+    [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+    [style*="grid-auto-rows: 190px"] { grid-auto-rows: 150px !important; }
+    [style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
 </style>
 </helmet>
 <div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; min-height: 100vh;">
@@ -29,9 +54,12 @@
           <span style="{{ burgerLine }}"></span>
           <span style="{{ burgerLine }}"></span>
         </button>
-        <a href="index.html" style="display: grid; justify-items: end; gap: 2px; color: #FFFFFF; text-align: right;">
-          <span style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;">Britway</span>
-          <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+        <a href="index.html" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF;">
+          <img src="logo-torre.png" alt="" style="height: 40px; width: auto; display: block;" />
+          <span style="display: grid; gap: 3px; justify-items: start;">
+            <img src="logo-wordmark.png" alt="Britway" style="height: 15px; width: auto; display: block;" />
+            <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+          </span>
         </a>
       </div>
       <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
@@ -71,9 +99,6 @@
           <div style="font-weight: 700; font-size: 19px; margin: 6px 0 4px;">Exsportise, inglés y deporte</div>
           <div style="font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7);">Los cursos deportivos, las clases de inglés, la vida en el campus y las salidas del fin de semana.</div>
         </div>
-      </div>
-      <div style="background: #D70100; border-radius: 8px; height: 260px; margin-top: 24px; display: flex; align-items: flex-end; padding: 20px;">
-        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Foto — tapa del brochure</span>
       </div>
     </div>
 
@@ -122,16 +147,50 @@
   </section>
 
   <footer style="background: #000000; color: rgba(255,255,255,0.6);">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
-      <a href="index.html" style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; font-size: 22px; color: #FFFFFF; letter-spacing: 0.02em; text-transform: uppercase;">Britway</a>
-      <span>Viajes educativos a Inglaterra · Acompañamiento argentino</span>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <div>
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 12px;"><img src="logo-torre.png" alt="" style="height: 42px; width: auto;" /><img src="logo-wordmark.png" alt="Britway" style="height: 16px; width: auto;" /></a>
+        <p style="font-size: 14px; line-height: 1.6; margin: 12px 0 0; max-width: 34ch;">Viajes educativos a Inglaterra · Acompañamiento argentino</p>
+      </div>
+      <div style="display: grid; gap: 12px; align-content: start; justify-items: start;">
+        <span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45);">Contacto</span>
+        <a href="mailto:travel.britway@gmail.com" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">travel.britway@gmail.com</a>
+        <a href="tel:+5491140879975" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">+54 9 11 4087-9975</a>
+        <a href="https://wa.me/5491140879975" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">WhatsApp</a>
+        <a href="https://instagram.com/britway" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">@britway</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.16);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 20px 32px; font-size: 12px;">© 2026 Britway</div>
     </div>
   </footer>
+  <div style="position: fixed; right: 20px; bottom: 20px; z-index: 80; display: grid; gap: 12px; justify-items: end;">
+    <sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="display: grid; gap: 10px; justify-items: end;">
+        <a href="https://wa.me/5491140879975" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <span style="background: #FFFFFF; color: #D70100; font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700; padding: 11px 18px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); white-space: nowrap;">+54 9 11 4087-9975</span>
+          <span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.2); flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#D70100" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm-2.9 5.1c.3-.1.6 0 .8.3l.9 1.5c.2.3.1.7-.1.9l-.6.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.6c.2-.2.6-.3.9-.1l1.5.9c.3.2.4.5.3.8l-.4 1c-.2.5-.7.8-1.2.7A9.6 9.6 0 0 1 7.4 9.8c-.1-.5.2-1 .7-1.2l1-.4Z"/></svg></span>
+        </a>
+        <a href="https://instagram.com/britway" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <span style="background: #FFFFFF; color: #D70100; font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700; padding: 11px 18px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); white-space: nowrap;">@britway</span>
+          <span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.2); flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D70100" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#D70100" stroke="none"/></svg></span>
+        </a>
+        <a href="mailto:travel.britway@gmail.com" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <span style="background: #FFFFFF; color: #D70100; font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700; padding: 11px 18px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); white-space: nowrap;">travel.britway@gmail.com</span>
+          <span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.2); flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D70100" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 7 8.2 6 8.2-6"/></svg></span>
+        </a>
+      </div>
+    </sc-if>
+    <button type="button" onClick="{{ toggleContact }}" aria-label="Contacto" style="width: 58px; height: 58px; border-radius: 999px; background: #FFFFFF; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.28);">
+      <sc-if value="{{ contactClosed }}" hint-placeholder-val="{{ true }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="#D70100" aria-hidden="true"><path d="M6.6 3.5c.5-.2 1.1 0 1.4.5l1.3 2.2c.3.5.2 1.1-.2 1.5l-1 .9a9.5 9.5 0 0 0 4.3 4.3l.9-1c.4-.4 1-.5 1.5-.2l2.2 1.3c.5.3.7.9.5 1.4l-.6 1.5c-.3.7-1 1.1-1.7 1A14.5 14.5 0 0 1 4.1 5.8c-.1-.7.3-1.4 1-1.7l1.5-.6Z"/></svg></sc-if>
+      <sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D70100" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></sc-if>
+    </button>
+  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { menuOpen: false, sent: false };
+  state = { contactOpen: false, menuOpen: false, sent: false };
   renderVals() {
     const input = {
       fontFamily: 'Montserrat, sans-serif', fontSize: '15px', color: '#000000',
@@ -139,6 +198,9 @@ class Component extends DCLogic {
       background: '#FFFFFF', width: '100%'
     };
     return {
+      contactOpen: this.state.contactOpen,
+      contactClosed: !this.state.contactOpen,
+      toggleContact: () => this.setState(s => ({ contactOpen: !s.contactOpen })),
       menuOpen: this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
