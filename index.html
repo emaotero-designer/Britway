@@ -44,17 +44,16 @@
   }
 </style>
 </helmet>
-<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; overflow-x: hidden;">
+<div style="font-family: Montserrat, sans-serif; color: #000000; background: #FFFFFF; overflow-x: clip;">
 
-  <div style="background: #D70100; color: #FFFFFF;">
-    <header style="position: sticky; top: 0; z-index: 40; background: #D70100; border-bottom: 1px solid rgba(255,255,255,0.22);">
+  <header style="position: sticky; top: 0; z-index: 40; background: #D70100; color: #FFFFFF; border-bottom: 1px solid rgba(255,255,255,0.22);">
       <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
         <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="{{ burger }}">
           <span style="{{ burgerLine }}"></span>
           <span style="{{ burgerLine }}"></span>
           <span style="{{ burgerLine }}"></span>
         </button>
-        <a href="index.html" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF;">
+        <a href="index.html" style="{{ headerLogoStyle }}">
           <img src="logo-torre.png" alt="" style="height: 40px; width: auto; display: block;" />
           <span style="display: grid; gap: 3px; justify-items: start;">
             <img src="logo-wordmark.png" alt="Britway" style="height: 15px; width: auto; display: block;" />
@@ -74,6 +73,7 @@
       </sc-if>
     </header>
 
+    <div style="background: #D70100; color: #FFFFFF;">
     <section style="max-width: 1180px; margin: 0 auto; padding: 84px 32px 88px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: center;">
       <div>
         <div style="display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; color: #D70100; padding: 7px 14px; border-radius: 4px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; transform: rotate(-1.2deg);">Enero y julio · Reino Unido</div>
@@ -94,29 +94,47 @@
           </div>
         </div>
       </div>
-      <div ref="{{ heroRef }}" style="display: grid; gap: 14px;">
-        <div style="{{ heroTile0 }}">
-        </div>
-        <div style="{{ heroTile1 }}">
-        </div>
-        <div style="{{ heroTile2 }}">
+      <div style="display: grid; gap: 26px; align-content: start;">
+        <a ref="{{ heroLogoRef }}" href="index.html" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; color: #FFFFFF; padding: 6px 4px 0;">
+          <img src="logo-torre.png" alt="" style="height: 116px; width: auto; display: block;" />
+          <span style="display: grid; gap: 8px; justify-items: end; text-align: right;">
+            <img src="logo-wordmark.png" alt="Britway" style="height: 40px; width: auto; display: block;" />
+            <span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.8); line-height: 1.35; white-space: nowrap;">Programas educativos<br />en Inglaterra</span>
+          </span>
+        </a>
+        <div ref="{{ heroRef }}" style="display: grid; gap: 14px;">
+          <div style="{{ heroTile0 }}">
+          </div>
+          <div style="{{ heroTile1 }}">
+          </div>
+          <div style="{{ heroTile2 }}">
+          </div>
         </div>
       </div>
     </section>
   </div>
 
-  <section style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
-    <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px;">
-      <div>
-        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Sobre nosotros</div>
-        <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 42px; line-height: 1.05; margin: 18px 0 0;">Empezó como un negocio familiar.</h2>
-        <div style="background: #D70100 url('sobre-nosotros.jpg') center / cover; border-radius: 6px; aspect-ratio: 4 / 5; max-width: 300px; margin-top: 28px; display: flex; align-items: flex-end; padding: 18px; box-shadow: inset 0 -70px 90px -50px rgba(0,0,0,0.55);">
-        </div>
+  <section id="sobre" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0; scroll-margin-top: 80px;">
+    <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Sobre nosotros</div>
+    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 42px; line-height: 1.06; margin: 16px 0 0; max-width: 22ch;">Una historia familiar.<br />Una experiencia que continúa.</h2>
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; margin-top: 40px; align-items: start;">
+      <div style="display: grid; gap: 20px; align-content: start; font-size: 17px; line-height: 1.68; color: rgba(0,0,0,0.75);">
+        <p style="margin: 0;">Detrás de Britway hay más de dos décadas de vínculo directo con Inglaterra, los viajes internacionales y los programas educativos.</p>
+        <p style="margin: 0;">Todo comenzó en el seno de un negocio familiar, cuando yo misma viví esta experiencia como participante. Fui alumna, recorrí estas aulas y viví en primera persona cada etapa de un viaje de estudios.</p>
+        <p style="margin: 0;">Lo que comenzó como una experiencia familiar se convirtió, con el tiempo, en una parte fundamental de mi propia historia.</p>
+        <p style="margin: 0;">Con los años, esa experiencia se transformó en un rol activo de coordinación: organizando grupos, supervisando actividades y acompañando de cerca a cada estudiante. Hoy, esa trayectoria es el fundamento de cada programa que diseño y ofrezco desde Britway.</p>
+        <p style="margin: 0;">Porque conozco esta experiencia desde ambos lados: primero como alumna y hoy como quien la organiza y acompaña.</p>
+        <p style="margin: 0; color: #000000; font-weight: 600;">Cada programa que diseñamos busca que el alumno no solo aprenda inglés, sino que viva una experiencia segura, enriquecedora y verdaderamente transformadora.</p>
+        <p style="margin: 0; color: #000000; font-weight: 600;">Una historia que comenzó en estas aulas y que hoy continúa acompañando a nuevas generaciones a vivir su propia experiencia en Inglaterra.</p>
       </div>
-      <div style="display: grid; gap: 22px; align-content: start; font-size: 17px; line-height: 1.68; color: rgba(0,0,0,0.75); max-width: 62ch;">
-        <p style="margin: 0;">Detrás de Britway hay más de dos décadas de vínculo directo con viajes internacionales a Inglaterra y programas educativos. Todo comenzó en el seno de un negocio familiar: primero como participante de los viajes, viviendo en carne propia cada etapa del proceso.</p>
-        <p style="margin: 0;">Con los años, esa experiencia se transformó en un rol activo de coordinación: organizando grupos, supervisando actividades y acompañando de cerca a cada estudiante. Esa trayectoria es hoy el cimiento de cada programa que ofrece Britway.</p>
-        <p style="margin: 0; color: #000000; font-weight: 600;">Cada programa que diseñamos busca que el alumno no solo aprenda inglés, sino que viva una experiencia segura, enriquecedora y verdaderamente transformadora. La misma que nos inspiró a crear Britway.</p>
+      <div style="align-self: start;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div style="background: #D70100 url('sobre-1990-1.jpg') center / cover; border-radius: 6px; aspect-ratio: 4 / 5; box-shadow: inset 0 -60px 80px -50px rgba(0,0,0,0.5);"></div>
+          <div style="background: #D70100 url('sobre-1990-2.jpg') center / cover; border-radius: 6px; aspect-ratio: 4 / 5; box-shadow: inset 0 -60px 80px -50px rgba(0,0,0,0.5);"></div>
+          <div style="background: #D70100 url('sobre-hoy-1.jpg') center / cover; border-radius: 6px; aspect-ratio: 4 / 5; box-shadow: inset 0 -60px 80px -50px rgba(0,0,0,0.5);"></div>
+          <div style="background: #D70100 url('sobre-hoy-2.jpg') center / cover; border-radius: 6px; aspect-ratio: 4 / 5; box-shadow: inset 0 -60px 80px -50px rgba(0,0,0,0.5);"></div>
+        </div>
+        <p style="font-size: 14px; font-style: italic; color: rgba(0,0,0,0.55); margin: 14px 0 0; text-align: center;">Las mismas aulas, muchos años después.</p>
       </div>
     </div>
   </section>
@@ -197,6 +215,26 @@
 
 
 
+  <section id="testimonios" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 0; scroll-margin-top: 80px;">
+    <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Testimonios</div>
+    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 16px 0 0;">Lo que cuentan las familias</h2>
+    <div style="border: 1px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 44px; margin-top: 32px; background: #FFFFFF; box-shadow: 0 24px 60px -34px rgba(0,0,0,0.28);">
+      <div style="color: #D70100; font-size: 20px; letter-spacing: 4px;" aria-label="5 de 5 estrellas">★★★★★</div>
+      <div style="font-size: 23px; line-height: 1.5; color: #111111; margin: 20px 0 28px; max-width: 62ch; min-height: 132px;">“{{ tQuote }}”</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#D70100" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 21s-7.5-4.6-10-9.1C.4 8.9 1.6 5.5 4.7 5.1c1.9-.2 3.4.9 4.3 2.2.9-1.3 2.4-2.4 4.3-2.2 3.1.4 4.3 3.8 2.7 6.8C19.5 16.4 12 21 12 21Z"/></svg>
+          <div style="font-size: 14px; color: rgba(0,0,0,0.6);"><span style="font-weight: 700; color: #111111; text-transform: uppercase; letter-spacing: 0.02em;">{{ tName }}</span> · {{ tRole }}</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" onClick="{{ tPrev }}" style="{{ navBtn }}">←</button>
+          <span style="font-size: 13px; font-weight: 700; color: rgba(0,0,0,0.6); min-width: 44px; text-align: center;">{{ tCount }}</span>
+          <button type="button" onClick="{{ tNext }}" style="{{ navBtn }}">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 0;">
     <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Seguir leyendo</div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
@@ -234,7 +272,6 @@
         <a href="tel:+5491140879975" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">+54 9 11 4087-9975</a>
         <a href="https://wa.me/5491140879975" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">WhatsApp</a>
         <a href="https://instagram.com/britway" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">@britway</a>
-        <span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.6); margin-top: 4px;">Treinta y Tres Orientales 360</span>
       </div>
     </div>
     <div style="border-top: 1px solid rgba(255,255,255,0.16);">
@@ -267,11 +304,17 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { hero: 0, casa: 0, contactOpen: false, menuOpen: false };
+  state = { hero: 0, casa: 0, contactOpen: false, menuOpen: false, headerLogo: false, t: 0 };
   heroRef = React.createRef();
+  heroLogoRef = React.createRef();
 
   componentDidMount() {
     this._onScroll = () => {
+      const logo = this.heroLogoRef.current;
+      if (logo) {
+        const show = logo.getBoundingClientRect().bottom < 72;
+        if (show !== this.state.headerLogo) this.setState({ headerLogo: show });
+      }
       const el = this.heroRef.current;
       if (!el) return;
       const r = el.getBoundingClientRect();
@@ -284,7 +327,7 @@ class Component extends DCLogic {
     };
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
-    this._casaTimer = setInterval(() => this.setState(s => ({ casa: s.casa ? 0 : 1 })), 3000);
+    this._casaTimer = setInterval(() => this.setState(s => ({ casa: (s.casa + 1) % 5 })), 3000);
   }
 
   componentWillUnmount() {
@@ -308,16 +351,34 @@ class Component extends DCLogic {
   }
 
   renderVals() {
+    const cur = TESTIMONIALS[this.state.t];
     return {
+      tQuote: cur.quote, tName: cur.name, tRole: cur.role + ' · ' + cur.year,
+      tCount: (this.state.t + 1) + ' / ' + TESTIMONIALS.length,
+      navBtn: {
+        width: '40px', height: '40px', borderRadius: '999px', cursor: 'pointer',
+        border: '1px solid rgba(0,0,0,0.28)', background: '#FFFFFF',
+        color: '#000000', fontSize: '16px', fontFamily: 'Montserrat, sans-serif'
+      },
+      tPrev: () => this.setState(s => ({ t: (s.t - 1 + TESTIMONIALS.length) % TESTIMONIALS.length })),
+      tNext: () => this.setState(s => ({ t: (s.t + 1) % TESTIMONIALS.length })),
       casaTile: {
         background: '#D70100', height: '100%', minHeight: '340px',
         backgroundImage: 'url("casa-familia-' + (this.state.casa + 1) + '.jpg")',
-        backgroundSize: 'cover', backgroundPosition: this.state.casa ? 'center 35%' : 'center',
+        backgroundSize: 'cover', backgroundPosition: 'center',
         display: 'flex', alignItems: 'flex-end', padding: '20px',
         boxShadow: 'inset 0 -80px 100px -55px rgba(0,0,0,0.6)',
         transition: 'background-image 600ms ease'
       },
       heroRef: this.heroRef,
+      heroLogoRef: this.heroLogoRef,
+      headerLogoStyle: {
+        display: 'flex', alignItems: 'center', gap: '12px', color: '#FFFFFF',
+        opacity: this.state.headerLogo ? 1 : 0,
+        transform: this.state.headerLogo ? 'translateY(0)' : 'translateY(-6px)',
+        pointerEvents: this.state.headerLogo ? 'auto' : 'none',
+        transition: 'opacity 260ms ease, transform 260ms ease',
+      },
       heroTile0: this.heroTile(0), heroTile1: this.heroTile(1), heroTile2: this.heroTile(2),
       contactOpen: this.state.contactOpen,
       contactClosed: !this.state.contactOpen,
@@ -330,9 +391,11 @@ class Component extends DCLogic {
   }
 }
 const TESTIMONIALS = [
-  { label: 'Testimonio 1', quote: 'Cita de un estudiante sobre su experiencia académica.', meta: 'Nombre · Programa · Año' },
-  { label: 'Testimonio 2', quote: 'Cita de una madre o padre sobre el acompañamiento y la seguridad.', meta: 'Nombre · Familia · Año' },
-  { label: 'Testimonio 3', quote: 'Cita de una institución o docente que viajó con su grupo.', meta: 'Nombre · Institución · Año' }
+  { quote: 'Mi experiencia con Britway fue inolvidable. Mi hijo todavía sigue recordando las anécdotas y los vínculos que creó con sus amigos de todas partes del mundo, con quienes aún mantiene contacto.', name: 'Natalia', role: 'Mamá de Felipe', year: '2025' },
+  { quote: 'Fiore se sintió cuidada, acompañada y feliz. Como si estuviera en casa, pero viviendo algo totalmente nuevo.', name: 'Alejandra', role: 'Mamá de Fiorella', year: '2025' },
+  { quote: 'Fue un hermoso viaje de aprendizaje en todas las formas: crecimiento personal, inmersión real viviendo con una familia local, seguir aprendiendo un idioma y descubriendo diversas culturas en la escuela… ¡y hacer nuevos amigos! Mer está en todo lo que necesitás, acompañando e incentivando a conocer y aprender. Paseamos mucho en el tiempo libre; ¡siempre propone algo! Creamos un grupo re lindo. Es una experiencia que, sin duda, recomiendo.', name: 'Ámbar', role: 'Estudiante', year: '2026' },
+  { quote: 'Como mamá, agradezco profundamente haber encontrado en Britway un verdadero aliado en un gran desafío familiar. Nuestra experiencia fue impecable y maravillosa. Vamos por el siguiente, juntos.', name: 'María Laura', role: 'Mamá de Rafaela', year: '2026' },
+  { quote: 'Para Valentín, el viaje fue inolvidable. Como papás, estamos muy contentos porque estuvo todo muy bien organizado: desde el alojamiento y los traslados hasta las actividades. Los chicos no solo fueron a aprender, sino que también conocieron gente nueva y se sintieron acompañados en todo momento. Pudieron conocer lugares hermosos. Una experiencia muy linda que, por supuesto, va a quedar siempre en el recuerdo.', name: 'Marina', role: 'Mamá de Valentín', year: '2026' }
 ];
 
 </script>

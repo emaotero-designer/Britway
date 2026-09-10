@@ -124,15 +124,14 @@
 
   <section id="testimonios" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
     <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5);">Testimonios</div>
-    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 16px 0 10px;">Lo que cuentan las familias</h2>
-    <p style="font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Contenido pendiente: necesitamos las citas reales de estudiantes y familias.</p>
-    <div style="border: 1px dashed rgba(0,0,0,0.3); border-radius: 8px; padding: 48px; margin-top: 32px; background: #FAFAFA;">
-      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; font-weight: 700;">{{ tLabel }}</div>
-      <div style="font-weight: 700; letter-spacing: -0.02em; font-size: 30px; line-height: 1.3; color: rgba(0,0,0,0.4); margin: 18px 0 26px; max-width: 34ch; min-height: 120px;">{{ tQuote }}</div>
+    <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 44px; line-height: 1.05; margin: 16px 0 0;">Lo que cuentan las familias</h2>
+    <div style="border: 1px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 44px; margin-top: 32px; background: #FFFFFF; box-shadow: 0 24px 60px -34px rgba(0,0,0,0.28);">
+      <div style="color: #D70100; font-size: 20px; letter-spacing: 4px;" aria-label="5 de 5 estrellas">★★★★★</div>
+      <div style="font-size: 23px; line-height: 1.5; color: #111111; margin: 20px 0 28px; max-width: 62ch; min-height: 132px;">“{{ tQuote }}”</div>
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
         <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 44px; height: 44px; border-radius: 999px; background: #D70100;"></div>
-          <div style="font-size: 13px; color: rgba(0,0,0,0.55);">{{ tMeta }}</div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#D70100" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 21s-7.5-4.6-10-9.1C.4 8.9 1.6 5.5 4.7 5.1c1.9-.2 3.4.9 4.3 2.2.9-1.3 2.4-2.4 4.3-2.2 3.1.4 4.3 3.8 2.7 6.8C19.5 16.4 12 21 12 21Z"/></svg>
+          <div style="font-size: 14px; color: rgba(0,0,0,0.6);"><span style="font-weight: 700; color: #111111; text-transform: uppercase; letter-spacing: 0.02em;">{{ tName }}</span> · {{ tRole }}</div>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
           <button type="button" onClick="{{ tPrev }}" style="{{ navBtn }}">←</button>
@@ -162,7 +161,6 @@
         <a href="tel:+5491140879975" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">+54 9 11 4087-9975</a>
         <a href="https://wa.me/5491140879975" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">WhatsApp</a>
         <a href="https://instagram.com/britway" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #FFFFFF;">@britway</a>
-        <span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.6); margin-top: 4px;">Treinta y Tres Orientales 360</span>
       </div>
     </div>
     <div style="border-top: 1px solid rgba(255,255,255,0.16);">
@@ -195,16 +193,18 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const TESTIMONIALS = [
-  { label: 'Testimonio 1', quote: 'Cita de un estudiante sobre su experiencia académica.', meta: 'Nombre · Programa · Año' },
-  { label: 'Testimonio 2', quote: 'Cita de una madre o padre sobre el acompañamiento y la seguridad.', meta: 'Nombre · Familia · Año' },
-  { label: 'Testimonio 3', quote: 'Cita de una institución o docente que viajó con su grupo.', meta: 'Nombre · Institución · Año' }
+  { quote: 'Mi experiencia con Britway fue inolvidable. Mi hijo todavía sigue recordando las anécdotas y los vínculos que creó con sus amigos de todas partes del mundo, con quienes aún mantiene contacto.', name: 'Natalia', role: 'Mamá de Felipe', year: '2025' },
+  { quote: 'Fiore se sintió cuidada, acompañada y feliz. Como si estuviera en casa, pero viviendo algo totalmente nuevo.', name: 'Alejandra', role: 'Mamá de Fiorella', year: '2025' },
+  { quote: 'Fue un hermoso viaje de aprendizaje en todas las formas: crecimiento personal, inmersión real viviendo con una familia local, seguir aprendiendo un idioma y descubriendo diversas culturas en la escuela… ¡y hacer nuevos amigos! Mer está en todo lo que necesitás, acompañando e incentivando a conocer y aprender. Paseamos mucho en el tiempo libre; ¡siempre propone algo! Creamos un grupo re lindo. Es una experiencia que, sin duda, recomiendo.', name: 'Ámbar', role: 'Estudiante', year: '2026' },
+  { quote: 'Como mamá, agradezco profundamente haber encontrado en Britway un verdadero aliado en un gran desafío familiar. Nuestra experiencia fue impecable y maravillosa. Vamos por el siguiente, juntos.', name: 'María Laura', role: 'Mamá de Rafaela', year: '2026' },
+  { quote: 'Para Valentín, el viaje fue inolvidable. Como papás, estamos muy contentos porque estuvo todo muy bien organizado: desde el alojamiento y los traslados hasta las actividades. Los chicos no solo fueron a aprender, sino que también conocieron gente nueva y se sintieron acompañados en todo momento. Pudieron conocer lugares hermosos. Una experiencia muy linda que, por supuesto, va a quedar siempre en el recuerdo.', name: 'Marina', role: 'Mamá de Valentín', year: '2026' }
 ];
 
 class Component extends DCLogic {
   state = { casa: 0, contactOpen: false, menuOpen: false, t: 0 };
 
   componentDidMount() {
-    this._casaTimer = setInterval(() => this.setState(s => ({ casa: s.casa ? 0 : 1 })), 3000);
+    this._casaTimer = setInterval(() => this.setState(s => ({ casa: (s.casa + 1) % 5 })), 3000);
   }
 
   componentWillUnmount() {
@@ -217,7 +217,7 @@ class Component extends DCLogic {
       casaTile: {
         background: '#D70100', height: '100%', minHeight: '360px',
         backgroundImage: 'url("casa-familia-' + (this.state.casa + 1) + '.jpg")',
-        backgroundSize: 'cover', backgroundPosition: this.state.casa ? 'center 35%' : 'center',
+        backgroundSize: 'cover', backgroundPosition: 'center',
         display: 'flex', alignItems: 'flex-end', padding: '20px',
         boxShadow: 'inset 0 -80px 100px -55px rgba(0,0,0,0.6)'
       },
@@ -228,7 +228,7 @@ class Component extends DCLogic {
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
       burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' },
-      tLabel: cur.label, tQuote: cur.quote, tMeta: cur.meta,
+      tQuote: cur.quote, tName: cur.name, tRole: cur.role + ' · ' + cur.year,
       tCount: (this.state.t + 1) + ' / ' + TESTIMONIALS.length,
       navBtn: {
         width: '40px', height: '40px', borderRadius: '999px', cursor: 'pointer',
