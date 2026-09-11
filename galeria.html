@@ -88,7 +88,7 @@
       <button type="button" onClick="{{ setEx }}" style="{{ chipEx }}">Exsportise</button>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 14px; margin-top: 28px;">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; grid-auto-flow: dense; gap: 14px; margin-top: 28px;">
       <sc-for list="{{ photos }}" as="p" hint-placeholder-count="12">
         <div style="{{ p.style }}">
         </div>
@@ -148,14 +148,22 @@ const PHOTOS = [
   { caption: 'Clase de inglés', tag: 'beet', img: 'gal-clase-ingles.jpg', pos: '65%' },
   { caption: 'Familia anfitriona', tag: 'beet', img: 'casa-familia-1.jpg', pos: '50%' },
   { caption: 'La familia en casa', tag: 'beet', img: 'casa-familia-2.jpg', pos: '35%' },
-  { caption: 'Tower of London', tag: 'ds', img: 'gal-tower-of-london.jpg', span: 'wide', pos: '40%' },
-  { caption: 'Campus de Winchester', tag: 'ds', img: 'discovery-campus.jpg', pos: '50%' },
-  { caption: 'Cambridge', tag: 'ds', img: 'gal-cambridge.jpg', pos: '60%' },
-  { caption: 'Tower Bridge por dentro', tag: 'ds', img: 'gal-tower-bridge.jpg', pos: '50%' },
-  { caption: 'Portsmouth', tag: 'ds', img: 'gal-portsmouth.jpg', pos: '55%' },
-  { caption: 'Wembley', tag: 'ex', img: 'card-exsportise.jpg', span: 'wide', pos: '54%' },
-  { caption: 'Excursión a la costa', tag: 'ex', img: 'hero-clase.jpg', pos: '50%' },
-  { caption: 'Tower Bridge', tag: 'ex', img: 'gal-londres.jpg', pos: '50%' }
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-1.jpg', span: 'wide', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-2.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-3.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-4.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-5.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-6.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-7.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-8.jpg', pos: '50%' },
+  { caption: 'Discovery Summer', tag: 'ds', img: 'discovery-9.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-1.jpg', span: 'wide', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-2.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-3.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-4.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-5.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-6.jpg', pos: '50%' },
+  { caption: 'Exsportise', tag: 'ex', img: 'exsportise-7.jpg', pos: '50%' }
 ];
 
 class Component extends DCLogic {
