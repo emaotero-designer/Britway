@@ -95,9 +95,6 @@
         </div>
       </div>
       <div style="display: grid; gap: 26px; align-content: start;">
-        <a ref="{{ heroLogoRef }}" href="index.html" style="display: flex; align-items: center; justify-content: center; width: 100%; color: #FFFFFF; padding: 4px 0 0;">
-          <img src="logo-torre-britway.png" alt="Britway" style="display: block; height: 210px; width: auto;" />
-        </a>
         <div ref="{{ heroRef }}" style="display: grid; gap: 14px;">
           <div style="{{ heroTile0 }}">
           </div>
@@ -407,10 +404,6 @@ class Component extends DCLogic {
       heroLogoRef: this.heroLogoRef,
       headerLogoStyle: {
         display: 'flex', alignItems: 'center', gap: '12px', color: '#FFFFFF',
-        opacity: this.state.headerLogo ? 1 : 0,
-        transform: this.state.headerLogo ? 'translateY(0)' : 'translateY(-6px)',
-        pointerEvents: this.state.headerLogo ? 'auto' : 'none',
-        transition: 'opacity 260ms ease, transform 260ms ease',
       },
       heroTile0: this.heroTile(0), heroTile1: this.heroTile(1), heroTile2: this.heroTile(2),
       contactOpen: this.state.contactOpen,
