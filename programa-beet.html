@@ -116,6 +116,23 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; border: 1px solid rgba(0,0,0,0.14); border-radius: 8px; overflow: hidden;">
+      <div style="padding: 40px;">
+        <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; font-weight: 700;">Alojamiento · Experiencia personalizada</div>
+        <h3 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 34px; margin: 10px 0 12px;">Casa de familia</h3>
+        <p style="font-size: 16px; line-height: 1.62; color: rgba(0,0,0,0.72); margin: 0;">Para jóvenes y adultos que buscan vivir una inmersión total. Convivencia auténtica con una familia anfitriona, incorporando la cultura desde adentro y viviendo una experiencia genuina de la vida cotidiana británica.</p>
+      </div>
+      <div style="{{ casaWrap }}">
+        <div style="{{ casaLayer0 }}"></div>
+        <div style="{{ casaLayer1 }}"></div>
+        <div style="{{ casaLayer2 }}"></div>
+        <div style="{{ casaLayer3 }}"></div>
+        <div style="{{ casaLayer4 }}"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 0;">
     <div style="border-top: 1px solid rgba(0,0,0,0.14); padding-top: 22px; font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">Acreditaciones y membresías: British Council · English UK · Quality English · IALC · TEN · El Gazette Approved Centre of Excellence</div>
   </section>
 
@@ -173,7 +190,27 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { contactOpen: false, menuOpen: false };
+  state = { contactOpen: false, menuOpen: false, casa: 0 };
+
+  componentDidMount() {
+    this._casaTimer = setInterval(() => this.setState(s => ({ casa: (s.casa + 1) % 5 })), 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._casaTimer);
+  }
+
+  casaLayer(i) {
+    return {
+      position: 'absolute', inset: 0,
+      backgroundImage: 'url("casa-familia-' + (i + 1) + '.jpg")',
+      backgroundSize: 'cover', backgroundPosition: 'center',
+      opacity: this.state.casa === i ? 1 : 0,
+      transition: 'opacity 900ms ease',
+      boxShadow: 'inset 0 -80px 100px -55px rgba(0,0,0,0.6)'
+    };
+  }
+
   renderVals() {
     return {
       contactOpen: this.state.contactOpen,
@@ -182,7 +219,9 @@ class Component extends DCLogic {
       menuOpen: this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       burger: { background: 'none', border: 'none', padding: '6px 4px', cursor: 'pointer', display: 'grid', gap: '5px', width: '34px' },
-      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' }
+      burgerLine: { display: 'block', height: '2px', background: '#FFFFFF', borderRadius: '2px' },
+      casaWrap: { position: 'relative', height: '100%', minHeight: '340px', background: '#D70100', overflow: 'hidden' },
+      casaLayer0: this.casaLayer(0), casaLayer1: this.casaLayer(1), casaLayer2: this.casaLayer(2), casaLayer3: this.casaLayer(3), casaLayer4: this.casaLayer(4)
     };
   }
 }

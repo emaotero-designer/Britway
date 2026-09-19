@@ -82,28 +82,11 @@
 
   <nav style="position: sticky; top: 0; z-index: 30; background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.12);">
     <div style="max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; gap: 28px; flex-wrap: wrap;">
-      <a href="#casa" style="font-size: 13px; font-weight: 700; color: #000000;">Casa de familia</a>
       <a href="#galeria" style="font-size: 13px; font-weight: 700; color: #000000;">Galería</a>
       <a href="#testimonios" style="font-size: 13px; font-weight: 700; color: #000000;">Testimonios</a>
     </div>
   </nav>
 
-  <section id="casa" style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 0;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; border: 1px solid rgba(0,0,0,0.14); border-radius: 8px; overflow: hidden;">
-      <div style="padding: 40px;">
-        <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #D70100; font-weight: 700;">Experiencia personalizada</div>
-        <h2 style="font-family: 'London Tube', Montserrat, sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: 34px; margin: 10px 0 12px;">Casa de familia</h2>
-        <p style="font-size: 16px; line-height: 1.62; color: rgba(0,0,0,0.72); margin: 0;">Para jóvenes y adultos que buscan vivir una inmersión total. Convivencia auténtica con una familia anfitriona, incorporando la cultura desde adentro y viviendo una experiencia genuina de la vida cotidiana británica.</p>
-      </div>
-      <div style="{{ casaWrap }}">
-        <div style="{{ casaLayer0 }}"></div>
-        <div style="{{ casaLayer1 }}"></div>
-        <div style="{{ casaLayer2 }}"></div>
-        <div style="{{ casaLayer3 }}"></div>
-        <div style="{{ casaLayer4 }}"></div>
-      </div>
-    </div>
-  </section>
 
   <section id="galeria" style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 0;">
     <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
@@ -227,7 +210,6 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    this._casaTimer = setInterval(() => this.setState(s => ({ casa: (s.casa + 1) % 5 })), 3000);
     this._equalizeQuotes();
     setTimeout(() => this._equalizeQuotes(), 400);
     this._onResize = () => this._equalizeQuotes();
@@ -235,19 +217,7 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
-    clearInterval(this._casaTimer);
     window.removeEventListener('resize', this._onResize);
-  }
-
-  casaLayer(i) {
-    return {
-      position: 'absolute', inset: 0,
-      backgroundImage: 'url("casa-familia-' + (i + 1) + '.jpg")',
-      backgroundSize: 'cover', backgroundPosition: 'center',
-      opacity: this.state.casa === i ? 1 : 0,
-      transition: 'opacity 900ms ease',
-      boxShadow: 'inset 0 -80px 100px -55px rgba(0,0,0,0.6)'
-    };
   }
 
   renderVals() {
@@ -255,8 +225,6 @@ class Component extends DCLogic {
     return {
       quoteRef: this.quoteRef,
       tQuoteStyle: { fontSize: '23px', lineHeight: 1.5, color: '#111111', margin: '20px 0 28px', maxWidth: '62ch', minHeight: this.state.qMin + 'px' },
-      casaWrap: { position: 'relative', height: '100%', minHeight: '360px', background: '#D70100', overflow: 'hidden' },
-      casaLayer0: this.casaLayer(0), casaLayer1: this.casaLayer(1), casaLayer2: this.casaLayer(2), casaLayer3: this.casaLayer(3), casaLayer4: this.casaLayer(4),
       contactOpen: this.state.contactOpen,
       contactClosed: !this.state.contactOpen,
       toggleContact: () => this.setState(s => ({ contactOpen: !s.contactOpen })),
